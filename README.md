@@ -60,4 +60,4 @@ Reaksi Dinamis:
 
 Robot beroperasi dalam mode loop, di mana setiap deteksi rambu dan respons diulang secara terus menerus. Ini memungkinkan robot untuk beradaptasi dengan kondisi lalu lintas dan merespons secara real-time terhadap rambu yang berbeda yang ditemui di jalur.
 
-Dataset dan Pelatihan Model:
+Dataset dan Pelatihan Model :
