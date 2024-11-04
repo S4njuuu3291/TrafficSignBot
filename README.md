@@ -32,4 +32,4 @@ Terdapat beberapa teknologi atau library yang digunakan dalam proyek ini yaitu:
 - Hardware: Arduino, Infrared Sensor, DC Motor, Motor Driver, dll.
 - Bahasa pemrograman: Python untuk computer vision dan C++ untuk Arduino
 
-Cara Kerja
+Cara Kerja:
