@@ -41,12 +41,28 @@ Berikut adalah beberapa teknologi dan library yang digunakan dalam proyek ini:
 
 - Gambar yang ditangkap oleh kamera kemudian dikirim ke model YOLOv10 yang telah dilatih untuk mendeteksi berbagai jenis rambu lalu lintas. Model ini akan menganalisis gambar dan mengidentifikasi rambu lalu lintas yang terdeteksi, seperti lampu merah, lampu hijau, dan rambu dilarang berhenti.
 
-### Pengolahan dan Respons
+## Perilaku Robot Berdasarkan Rambu
 
-- Berdasarkan hasil deteksi, robot akan melakukan tindakan yang sesuai:
-  - **Rambu Lampu Merah**: Jika model mendeteksi lampu merah, Arduino akan menerima perintah untuk menghentikan motor robot, sehingga robot berhenti.
-  - **Rambu Lampu Hijau**: Jika mendeteksi lampu hijau, Arduino mengirimkan perintah untuk melanjutkan pergerakan robot.
-  - **Rambu Dilarang Berhenti**: Jika robot sedang diminta untuk berhenti tetapi mendeteksi rambu dilarang berhenti, robot akan tetap bergerak dan tidak akan berhenti.
+| **ID** | **Nama Rambu**                                     | **Aksi**                                                                                   | **Logika**                                                                                   |
+|--------|----------------------------------------------------|-------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------|
+| 0      | Lampu Hijau                                        | Robot melanjutkan pergerakan mengikuti garis.                                              | Motor robot terus bergerak maju.                                                           |
+| 1      | Lampu Kuning                                       | Robot memperlambat pergerakan.                                                            | Mengurangi kecepatan sebagai peringatan.                                                   |
+| 2      | Lampu Merah                                        | Robot berhenti sepenuhnya.                                                                | Motor robot dimatikan untuk menghentikan pergerakan.                                        |
+| 3      | Larangan Belok Kanan                               | Robot menghindari belokan ke kanan.                                                       | Tetap di jalur lurus atau belok ke arah lain.                                              |
+| 4      | Larangan Belok Kiri                                | Robot menghindari belokan ke kiri.                                                        | Tetap di jalur lurus atau belok ke arah lain.                                              |
+| 5      | Larangan Berhenti                                  | Robot terus bergerak meskipun ada sinyal berhenti.                                         | Mengabaikan perintah berhenti jika terdeteksi.                                              |
+| 6      | Larangan Berjalan Terus Wajib Berhenti Sesaat      | Robot berhenti sejenak sebelum melanjutkan perjalanan.                                    | Berhenti beberapa detik sebelum bergerak maju.                                             |
+| 7      | Larangan Masuk                                     | Robot berputar arah.                                                                      | Menghentikan perjalanan dan kembali ke jalur sebelumnya.                                    |
+| 8      | Larangan Memutar Balik                             | Robot menghindari perintah untuk memutar arah.                                             | Tetap di jalur yang ada tanpa melakukan putar balik.                                       |
+| 9      | Larangan Parkir                                    | Robot terus bergerak tanpa berhenti di area tersebut.                                      | Mengabaikan perintah untuk berhenti.                                                       |
+| 10     | Peringatan Alat Pemberi Isyarat Lalu Lintas        | Robot melambat dan bersiap untuk merespons rambu berikutnya.                               | Mengantisipasi lampu lalu lintas di depan.                                                 |
+| 11     | Peringatan Banyak Pejalan Kaki                    | Robot melambat dan berhenti jika diperlukan.                                              | Memperhatikan lingkungan sekitar untuk menghindari tabrakan.                               |
+| 12     | Perintah Masuk Jalur Kiri                          | Robot berpindah ke jalur kiri.                                                            | Mengatur arah untuk masuk ke jalur kiri.                                                   |
+| 13     | Perintah Pilihan Memasuki Salah Satu Jalur         | Robot memilih jalur yang sesuai berdasarkan kondisi jalan.                                | Memilih jalur berdasarkan algoritma jalur terbaik.                                         |
+| 14     | Petunjuk Area Parkir                               | Robot mencari area parkir dan berhenti di sana.                                           | Mencari lokasi berhenti yang sesuai.                                                       |
+| 15     | Petunjuk Lokasi Pemberhentian Bus                 | Robot berhenti di lokasi yang ditentukan.                                                 | Berhenti di tempat yang sesuai.                                                            |
+| 16     | Petunjuk Lokasi Putar Balik                       | Robot berputar balik di area yang ditentukan.                                             | Mengatur arah untuk memutar balik.                                                         |
+| 17     | Petunjuk Penyeberangan Jalan Kaki                 | Robot berhenti untuk memberi prioritas kepada pejalan kaki.                               | Berhenti sampai jalan aman untuk dilalui.                                                  |
 
 ### Reaksi Dinamis
 
