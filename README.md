@@ -39,7 +39,7 @@ Berikut adalah beberapa teknologi dan library yang digunakan dalam proyek ini:
 
 ### Deteksi Rambu Lalu Lintas
 
-- Gambar yang ditangkap oleh kamera kemudian dikirim ke model YOLOv10 yang telah dilatih untuk mendeteksi berbagai jenis rambu lalu lintas. Model ini akan menganalisis gambar dan mengidentifikasi rambu lalu lintas yang terdeteksi, seperti lampu merah, lampu hijau, dan rambu dilarang berhenti.
+- Gambar yang ditangkap oleh kamera kemudian dikirim ke model YOLOv11 yang telah dilatih untuk mendeteksi berbagai jenis rambu lalu lintas. Model ini akan menganalisis gambar dan mengidentifikasi rambu lalu lintas yang terdeteksi, seperti lampu merah, lampu hijau, dan rambu dilarang berhenti.
 
 ## Perilaku Robot Berdasarkan Rambu
 
